@@ -17,6 +17,8 @@ flowchart LR
   M -->|capture --som| S[ScreenCaptureKit PNG with numbered boxes]
 ```
 
+Static diagram: [docs/architecture.svg](docs/architecture.svg). Step-by-step build: [BUILD.md](BUILD.md).
+
 Hand-written `CGEvent` and `osascript` code tends to drop mouse-ups and miss nested AppKit views. mac-cu keeps one event source, moves the pointer and waits before each click so hover state arms, and lets the agent target a control by its number in the accessibility tree instead of a pixel guess. The loop is: list controls, act on one, read state back.
 
 ## Stack

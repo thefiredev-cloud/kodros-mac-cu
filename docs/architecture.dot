@@ -1,0 +1,18 @@
+digraph "kodros-mac-cu architecture" {
+  rankdir=TB; bgcolor="white"; pad=0.3; nodesep=0.45; ranksep=0.7;
+  node [shape=box, style="rounded,filled", fillcolor="#f6f6f8", color="#c9c9d1", fontname="Helvetica,Arial,sans-serif", fontsize=12, fontcolor="#1b1b1f", margin="0.18,0.1", penwidth=1.4];
+  edge [color="#5c5c66", fontname="Helvetica,Arial,sans-serif", fontsize=10, fontcolor="#5c5c66", arrowsize=0.8];
+  agent [label="Agent or shell"];
+  mc [label="mac-cu", color="#c2410c", penwidth=2.2, fillcolor="#fff7ed"];
+  ax [label="Accessibility tree\nnumbered controls"];
+  ev [label="One shared CGEvent source\nhover armed before click"];
+  app [label="Target app"];
+  sck [label="ScreenCaptureKit PNG\nwith numbered boxes"];
+  agent -> mc [label="mac-cu elements Safari"];
+  mc -> ax [];
+  ax -> agent [label="controls as JSON"];
+  agent -> mc [label="mac-cu click --element 9"];
+  mc -> ev [];
+  ev -> app [];
+  mc -> sck [label="capture --som"];
+}
