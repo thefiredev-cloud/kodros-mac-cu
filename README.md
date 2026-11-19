@@ -4,6 +4,12 @@ A Swift command-line tool that lets an AI agent drive a Mac: list an app's contr
 
 Built for the [Kodros](https://kodros.ai) agent stack.
 
+## On your hardware
+
+- Does: gives an agent a way to use one Mac you own. The agent can run anywhere.
+- Needs: macOS 14 or later on Apple Silicon. No GPU or model is involved.
+- Stays on-prem: the source has no network calls. It reads the screen and sends input on that Mac only. The agent that calls it decides where screenshots and control lists go.
+
 ## How it works
 
 ```mermaid
